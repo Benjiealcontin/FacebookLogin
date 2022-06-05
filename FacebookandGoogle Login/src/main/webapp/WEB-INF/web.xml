@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="https://jakarta.ee/xml/ns/jakartaee" xmlns:web="http://xmlns.jcp.org/xml/ns/javaee" xsi:schemaLocation="https://jakarta.ee/xml/ns/jakartaee https://jakarta.ee/xml/ns/jakartaee/web-app_5_0.xsd" id="WebApp_ID" version="5.0">
+  <display-name>FacebookandGoogle Login</display-name>
+  <welcome-file-list>
+    <welcome-file>Welcomepage.jsp</welcome-file>
+  </welcome-file-list>
+  <servlet>
+    <description></description>
+    <display-name>Get_User_Details</display-name>
+    <servlet-name>Get_User_Details</servlet-name>
+    <servlet-class>com.Facebook.Servlet.Get_User_Details</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Get_User_Details</servlet-name>
+    <url-pattern>/Get_User_Details</url-pattern>
+  </servlet-mapping>
+  <servlet>
+    <description></description>
+    <display-name>Facebook</display-name>
+    <servlet-name>Facebook</servlet-name>
+    <servlet-class>com.Facebook.Servlet.Facebook</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Facebook</servlet-name>
+    <url-pattern>/Facebook</url-pattern>
+  </servlet-mapping>
+</web-app>
