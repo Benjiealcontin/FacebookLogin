@@ -16,6 +16,7 @@ Email : ${email}<br>
 Location : ${location}<br>
 Gender : ${gender}<br>
 Picture : ${picture}<br>
+token : ${token}<br>
 <img src="${picture}"></img>
 </body>
 </html>

@@ -2,6 +2,7 @@ package com.Facebook.Servlet;
 
 import java.io.IOException;
 
+import com.Facebook.Dao.Crud;
 import com.Facebook.Dao.Get_User_Details;
 import com.Facebook.Model.Users;
 
@@ -49,7 +50,27 @@ public class Facebook extends HttpServlet {
 			request.setAttribute("location", location);
 			request.setAttribute("gender", gender);
 			request.setAttribute("picture", picture);
+			request.setAttribute("token", access_token);
 			request.getRequestDispatcher("userpage.jsp").forward(request, response);
+
+			Users u = new Users();
+			u.setUser_name(name);
+			u.setEmail(email);
+			u.setLocation(location);
+			u.setGender(gender);
+			u.setProfile_picture(picture);
+			u.setToken(access_token);
+
+			Crud ope = new Crud();
+
+			int i = ope.Adduser(u);
+
+			if (i > 0) {
+				response.sendRedirect("userpage.jsp");
+			} else {
+				response.sendRedirect("Welcomepage.jsp");
+			}
+
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
